@@ -1,3 +1,4 @@
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
 using UnityEditor;
 using UnityEditor.iOS.Xcode;
 using UnityEngine;
@@ -18,7 +19,6 @@ namespace Apple.Core
             IsEnabled = false;
         }
 
-#if UNITY_EDITOR_OSX
         public override void OnProcessEntitlements(AppleBuildProfile appleBuildProfile, BuildTarget buildTarget, string pathToBuiltTarget, PlistDocument entitlements)
         {
             if (buildTarget == BuildTarget.tvOS)
@@ -36,6 +36,6 @@ namespace Apple.Core
                 }
             }
         }
-#endif
     }
 }
+#endif

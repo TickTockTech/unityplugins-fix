@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-#if UNITY_EDITOR_OSX
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
 using UnityEditor.iOS.Xcode;
 #endif
 
@@ -17,6 +17,7 @@ namespace Apple.Core
         
         public virtual string DisplayName => GetType().Name;
 
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
         /// <summary>
         /// Returns an enumerable collection of all objects in the project which derive from AppleBuildStep
         /// </summary>
@@ -81,4 +82,5 @@ namespace Apple.Core
         /// <param name="pathToBuiltProject"></param>
         public virtual void OnFinalizePostProcess(AppleBuildProfile appleBuildProfile, BuildTarget buildTarget, string pathToBuiltProject) { }
     }
+#endif
 }
