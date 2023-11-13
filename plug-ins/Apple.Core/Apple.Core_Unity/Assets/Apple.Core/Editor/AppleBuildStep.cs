@@ -1,4 +1,4 @@
-﻿using Apple.Core;
+using Apple.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,6 +81,6 @@ namespace Apple.Core
         /// <param name="buildTarget"></param>
         /// <param name="pathToBuiltProject"></param>
         public virtual void OnFinalizePostProcess(AppleBuildProfile appleBuildProfile, BuildTarget buildTarget, string pathToBuiltProject) { }
-    }
 #endif
+    }
 }
