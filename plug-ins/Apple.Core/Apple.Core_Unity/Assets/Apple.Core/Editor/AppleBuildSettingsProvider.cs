@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
 namespace Apple.Core
 {
     public class AppleBuildSettingsProvider : SettingsProvider
@@ -56,3 +57,4 @@ namespace Apple.Core
         }
     }
 }
+#endif

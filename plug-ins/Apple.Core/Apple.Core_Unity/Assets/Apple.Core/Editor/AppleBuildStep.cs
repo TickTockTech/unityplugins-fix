@@ -17,7 +17,6 @@ namespace Apple.Core
         
         public virtual string DisplayName => GetType().Name;
 
-#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
         /// <summary>
         /// Returns an enumerable collection of all objects in the project which derive from AppleBuildStep
         /// </summary>
@@ -31,6 +30,7 @@ namespace Apple.Core
             return appleBuildStepTypes;
         }
 
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
         /// <summary>
         /// Called at the beginning of performing build post process. This is invoked first for all steps.
         /// </summary>

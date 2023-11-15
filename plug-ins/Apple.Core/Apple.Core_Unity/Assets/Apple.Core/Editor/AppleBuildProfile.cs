@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
+#if UNITY_EDITOR_OSX && (UNITY_IOS || UNITY_TVOS || UNITY_STANDALONE_OSX)
 namespace Apple.Core
 {
     [CreateAssetMenu(menuName = "Apple/Build/Apple Build Profile")]
@@ -118,3 +119,5 @@ namespace Apple.Core
         }
     }
 }
+#endif
+
